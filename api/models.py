@@ -27,6 +27,7 @@ class PrerequisitCourses(models.Model):
     course_name = models.CharField(max_length=20)
     course_id = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='pre_courses')
 
+
 class Student(models.Model):
     name = models.CharField(max_length=50)
     phone = models.CharField(max_length=30)
@@ -41,7 +42,7 @@ class Student(models.Model):
     @property
     def courses(self):
         return self.user_skills
-class admin(models.Model):
+class Admin(models.Model):
     name  = models.CharField(max_length=50)
     password = models.IntegerField()
 
