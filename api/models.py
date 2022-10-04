@@ -29,13 +29,18 @@ class PrerequisitCourses(models.Model):
 
 class Student(models.Model):
     name = models.CharField(max_length=50)
+    phone = models.CharField(max_length=30)
     title = models.CharField(max_length=50)
     experience = models.IntegerField(blank=True, null=True)
     gender = models.CharField(max_length=10)
     status = models.BooleanField()
-    userSkills = models.ManyToManyField(Skill, related_name='students')
+    user_skills = models.ManyToManyField(Skill, related_name='students')
     enrolled_in = models.ManyToManyField(Course, through='EnrolledIn')
-
+    def __str__(self):
+        return f'title: {self.title}, gender:{self.gender}name:{self.name}'
+    @property
+    def courses(self):
+        return self.user_skills
 class admin(models.Model):
     name  = models.CharField(max_length=50)
     password = models.IntegerField()
