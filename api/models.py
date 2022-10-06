@@ -20,7 +20,7 @@ class Course(models.Model):
 
 class Deliverable(models.Model):
     name = models.CharField(max_length=30)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='deliverables')
+    deliverable_course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='deliverables')
     
 
 class PrerequisitCourses(models.Model):

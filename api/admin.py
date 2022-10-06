@@ -11,3 +11,5 @@ admin.site.register(Deliverable)
 admin.site.register(PrerequisitCourses)
 admin.site.register(Supplier)
 admin.site.register(Admin)
+
+
