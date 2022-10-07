@@ -5,10 +5,19 @@ from .serializers import *
 
 from rest_framework import filters
 from .mixins import InstructorPermissionMixin, CoursePermissionMixin
+
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
+from django.views.decorators.vary import vary_on_cookie, vary_on_headers
+
+
 class CourseViewSet(viewsets.ModelViewSet, CoursePermissionMixin):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
+    
     filter_fields = '__all__'
+    #@method_decorator(cache_page(60*60*2))
+    #@method_decorator(vary_on_cookie)
 
 
 class PrerequisitCoursesViewSet(viewsets.ModelViewSet):     
@@ -38,6 +47,8 @@ class StudentViewSet(
     viewsets.ModelViewSet
     ):     
     queryset = Student.objects.all()
+    #@method_decorator(cache_page(60*60*2))
+    #@method_decorator(vary_on_cookie)
     serializer_class = StudentSerializer
     lookup_field = 'pk'
     filter_backends = [DjangoFilterBackend]
