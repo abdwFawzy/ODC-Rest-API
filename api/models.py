@@ -24,11 +24,15 @@ class Supplier(models.Model):
 
 class Student(models.Model):
     name = models.CharField(max_length=50)
+    email = models.EmailField(
+        verbose_name='email address',
+        max_length=255,
+        unique=True,
+    )
     phone = models.CharField(max_length=30)
     title = models.CharField(max_length=50)
     experience = models.IntegerField(blank=True, null=True)
     gender = models.CharField(max_length=10)
-    status = models.BooleanField()
     student_skills = models.ManyToManyField(Skill, related_name='students')
     
     def __str__(self):
@@ -62,10 +66,6 @@ class Deliverable(models.Model):
     def __str__(self):
         return f'name:{self.name}'
     
-
-class Admin(models.Model):
-    name  = models.CharField(max_length=50)
-    password = models.IntegerField()
 
 class EnrolledIn(models.Model):
     start_date = models.DateField(default=datetime.date.today(), blank=True)
