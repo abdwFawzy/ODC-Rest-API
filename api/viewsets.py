@@ -50,8 +50,8 @@ class StudentViewSet(
     #@method_decorator(vary_on_cookie)
     serializer_class = StudentSerializer
     lookup_field = 'pk'
-    filter_backends = [DjangoFilterBackend]
     filter_fields = '__all__'
+
     
 class DeliverableViewSet(viewsets.ModelViewSet):     
     queryset = Deliverable.objects.all()

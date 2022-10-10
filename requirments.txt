@@ -9,3 +9,5 @@ djangorestframework-simplejwt
 djangorestframework-simplejwt[crypto]
 drf_yasg
 drf-yasg[validation]
+django-cors-headers
+drf-nested-routers

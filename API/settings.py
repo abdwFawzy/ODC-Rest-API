@@ -44,10 +44,11 @@ INSTALLED_APPS = [
     'drf_link_header_pagination',
     'rest_framework_simplejwt',
     'drf_yasg',
-    
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware', 
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
