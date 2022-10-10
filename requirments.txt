@@ -1,0 +1,11 @@
+django 
+djangorestframework
+requests
+django-cors-headers
+django-url-filter
+django-filter
+djangorestframework-link-header-pagination
+djangorestframework-simplejwt
+djangorestframework-simplejwt[crypto]
+drf_yasg
+drf-yasg[validation]
