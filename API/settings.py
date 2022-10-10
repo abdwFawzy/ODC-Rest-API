@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'drf_link_header_pagination',
     'rest_framework_simplejwt',
     'drf_yasg',
+    
 ]
 
 MIDDLEWARE = [
@@ -144,5 +145,5 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_FILTER_BACKENDS': ['url_filter.integrations.drf.DjangoFilterBackend'],
     'DEFAULT_PAGINATION_CLASS': 'drf_link_header_pagination.LinkHeaderPagination',
-    'PAGE_SIZE': 1,
+    'PAGE_SIZE': 3,
 }
